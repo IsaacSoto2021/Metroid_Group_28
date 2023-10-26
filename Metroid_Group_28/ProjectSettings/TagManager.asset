@@ -8,6 +8,7 @@ TagManager:
   - Health
   - Health+
   - Death
+  - Portal
   layers:
   - Default
   - TransparentFX
