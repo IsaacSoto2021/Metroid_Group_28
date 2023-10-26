@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,15 +6,20 @@ using UnityEngine;
 
 // Remstedt, Reed
 // 10/26/2023
-// player controller, handles movement
+// player controller, handles movement, health, and Shooting
 public class PlayerController : MonoBehaviour
 {
     public float speed = 10f;
     public float jumpForce = 1f;
 
     private Rigidbody rigidbodyRef;
-    private Vector3 startPos;
+    public Vector3 startPos;
     public int Lives = 99;
+
+    public GameObject lightBullet;
+    public GameObject heavyBullet;
+
+    private bool isShooting = false;
 
 
     // Start is called before the first frame update
@@ -49,6 +55,18 @@ public class PlayerController : MonoBehaviour
             Jump();
         }
 
+
+        //Shooting Controlls
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            Instantiate(lightBullet, transform.position, transform.rotation);
+        }
+
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            Instantiate(lightBullet, transform.position, transform.rotation * Quaternion.AngleAxis(180, transform.up));
+        }
+
     }//update
 
     private void Jump()
@@ -61,4 +79,6 @@ public class PlayerController : MonoBehaviour
             rigidbodyRef.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
     }//jump
+
+  
 }
