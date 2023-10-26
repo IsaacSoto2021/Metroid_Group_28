@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 // Remstedt, Reed
 // 10/26/2023
 // player controller, handles movement
@@ -12,6 +13,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rigidbodyRef;
     private Vector3 startPos;
+    public int Lives = 99;
 
 
     // Start is called before the first frame update
