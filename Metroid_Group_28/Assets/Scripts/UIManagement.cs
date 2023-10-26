@@ -18,7 +18,8 @@ public class UIManagement : MonoBehaviour
 
     void Update()
     {
-        // Sets the text string as "Lives: " (A String) Plus Total Score
-        //livesText.text = "Lives: " + PlayerController.lives.Tostring();
+         //Sets the text string as "Lives: " (A String) Plus Total Score
+
+         //livesText.text = "Lives: " + PlayerController.lives.Tostring();
     }
 }
