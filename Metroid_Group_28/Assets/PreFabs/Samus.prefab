@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  jumpForce: 5
+  jumpForce: 6
   startPos: {x: 0, y: 0, z: 0}
   Lives: 99
   lightBullet: {fileID: 1584707653591684885, guid: 38c77051e666c3d4fb56a9e6dee782a1, type: 3}
