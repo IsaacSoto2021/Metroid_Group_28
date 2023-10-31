@@ -28,5 +28,13 @@ public class BulletLogic : MonoBehaviour
         transform.position += -transform.right * speed * Time.deltaTime;
     }
 
-   
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "EnemyBasic")
+        {
+            Destroy(gameObject);
+        }
+    }
+
+
 }
