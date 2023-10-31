@@ -12,11 +12,21 @@ public class BulletLogic : MonoBehaviour
          
       startPos = transform.position;
 
+        StartCoroutine(WaitToVanish());
     }
 
-// Update is called once per frame
-void Update()
+
+    IEnumerator WaitToVanish()
+    {
+        yield return new WaitForSeconds(5);
+        Destroy(gameObject);
+    }
+
+    // Update is called once per frame
+    void Update()
     {
         transform.position += -transform.right * speed * Time.deltaTime;
     }
+
+   
 }
