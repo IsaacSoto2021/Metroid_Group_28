@@ -5,7 +5,7 @@ using UnityEngine;
 public class Portal : MonoBehaviour
 {
 
-    public GameObject teleportpoint;
+    public GameObject teleportPoint;
 
 
 }

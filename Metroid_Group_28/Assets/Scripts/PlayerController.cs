@@ -69,6 +69,16 @@ public class PlayerController : MonoBehaviour
 
     }//update
 
+    //Pickups and Collisons
+    private void OnTriggerEnter(Collider other)
+    {
+        //Portal
+            if (other.gameObject.tag == "Portal")
+        {
+            transform.position = other.gameObject.GetComponent<Portal>().teleportPoint.transform.position;
+            startPos = transform.position;
+        }//portal
+    }
     private void Jump()
     {
         RaycastHit hit;
