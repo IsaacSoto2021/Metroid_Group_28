@@ -11,8 +11,8 @@ using TMPro;
 
 public class UIManagement : MonoBehaviour
 {
-  
-
+    public PlayerController PlayerController;
+    
     public TMP_Text livesText;
     // Update is called once per frame
 
