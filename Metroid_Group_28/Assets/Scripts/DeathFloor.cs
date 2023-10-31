@@ -8,10 +8,15 @@ public class DeathFloor : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         
-      //  if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
-           // PlayerController Samus = other.gameObject.GetComponent<PlayerController>();
-           // other.gameObject.transform.position = Samus.startPos;
+           PlayerController Samus = other.gameObject.GetComponent<PlayerController>();
+           if (Samus != null)
+           {
+            other.gameObject.transform.position = Samus.startPos;
+            print ("Meow");
+           }
+          
         }
 
 

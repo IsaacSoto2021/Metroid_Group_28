@@ -95,6 +95,10 @@ public class PlayerController : MonoBehaviour
             transform.position = other.gameObject.GetComponent<Portal>().teleportPoint.transform.position;
             startPos = transform.position;
         }
+        if (other.gameObject.tag == "Death")
+        {
+            transform.position = startPos;
+        }
     }
     private void Jump()
     {
