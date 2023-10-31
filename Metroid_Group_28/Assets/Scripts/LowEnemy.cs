@@ -50,5 +50,10 @@ public class SideToSideEnemyScript : MonoBehaviour
                 movingRight = true;
             }
         }
-    }
-}
+
+
+    }//update
+
+  
+
+}//class
