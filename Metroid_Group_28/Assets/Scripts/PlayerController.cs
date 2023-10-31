@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -59,15 +57,34 @@ public class PlayerController : MonoBehaviour
         //Shooting Controlls
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            Instantiate(lightBullet, transform.position, transform.rotation);
+            if (isShooting == false)
+            {
+                isShooting = true;
+                StartCoroutine(WaitToFire());
+                Instantiate(lightBullet, transform.position, transform.rotation);
+            }
+         
+            
         }
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            Instantiate(lightBullet, transform.position, transform.rotation * Quaternion.AngleAxis(180, transform.up));
+            if (isShooting == false)
+            {
+                isShooting = true;
+                StartCoroutine(WaitToFire());
+                Instantiate(lightBullet, transform.position, transform.rotation * Quaternion.AngleAxis(180, transform.up));
+            }
         }
 
     }//update
+
+    IEnumerator WaitToFire()
+    {
+        yield return new WaitForSeconds(1);
+        isShooting = false;
+    }
+
 
     //Pickups and Collisons
     private void OnTriggerEnter(Collider other)

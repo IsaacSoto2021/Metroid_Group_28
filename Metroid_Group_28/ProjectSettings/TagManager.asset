@@ -9,6 +9,7 @@ TagManager:
   - Health+
   - Death
   - Portal
+  - Enemy
   layers:
   - Default
   - TransparentFX
