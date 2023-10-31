@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public GameObject heavyBullet;
 
     private bool isShooting = false;
+    private bool isHurt = false;
 
 
     // Start is called before the first frame update
@@ -85,6 +86,11 @@ public class PlayerController : MonoBehaviour
         isShooting = false;
     }
 
+    IEnumerator PlayerHurt()
+    {
+        yield return new WaitForSeconds(5);
+        isHurt = false;
+    }
 
     //Pickups and Collisons
     private void OnTriggerEnter(Collider other)
@@ -95,6 +101,25 @@ public class PlayerController : MonoBehaviour
             transform.position = other.gameObject.GetComponent<Portal>().teleportPoint.transform.position;
             startPos = transform.position;
         }//portal
+
+            //death
+            if (other.gameObject.tag == "Death")
+        {
+            transform.position = startPos;
+        }
+
+        //damagesources
+        if (isHurt == false)
+        {
+            //Enemy
+            if (other.gameObject.tag == "Enemy")
+            {
+                Lives += -5;
+                isHurt = true;
+                StartCoroutine(PlayerHurt());
+
+            }//enemy
+        }
     }
     private void Jump()
     {
