@@ -136,7 +136,7 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   Lives: 99
   lightBullet: {fileID: 1584707653591684885, guid: 38c77051e666c3d4fb56a9e6dee782a1, type: 3}
-  heavyBullet: {fileID: 0}
+  heavyBullet: {fileID: 1584707653591684885, guid: 612bd9cebc037874a9755cb89b1cc257, type: 3}
   MeshRenderer: {fileID: 3418113381692933782}
 --- !u!54 &6924882944101147703
 Rigidbody:

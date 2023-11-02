@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1082603290361416276}
   - component: {fileID: 5055210438768596796}
   m_Layer: 0
-  m_Name: BulletPrefab
+  m_Name: HeavyBulletPrefab
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fbb8ba68e8c09a04cbf00bcff80d1926, type: 2}
+  - {fileID: 2100000, guid: 17099f21e12b12c4492a0977412a7a82, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
