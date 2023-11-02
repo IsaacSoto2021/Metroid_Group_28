@@ -30,7 +30,7 @@ public class BulletLogic : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "EnemyBasic")
+        if (other.gameObject.tag == "Enemy")
         {
             Destroy(gameObject);
         }

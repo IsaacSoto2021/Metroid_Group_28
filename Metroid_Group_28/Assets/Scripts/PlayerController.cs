@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator WaitToFire()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
         isShooting = false;
     }
 
