@@ -126,9 +126,10 @@ public class PlayerController : MonoBehaviour
 
             //death
             if (other.gameObject.tag == "Death")
-        {
-            transform.position = startPos;
-        }
+            {
+               Lives += -15;
+               transform.position = startPos;
+            }
 
         //damagesources
         if (isHurt == false)
