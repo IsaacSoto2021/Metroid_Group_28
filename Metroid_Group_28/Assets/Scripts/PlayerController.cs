@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     private bool isShooting = false;
     private bool isHurt = false;
 
+    private bool heavyBulletFound = false;
+
     public MeshRenderer MeshRenderer;
 
 
@@ -60,11 +62,19 @@ public class PlayerController : MonoBehaviour
         //Shooting Controlls
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
+
             if (isShooting == false)
             {
                 isShooting = true;
                 StartCoroutine(WaitToFire());
-                Instantiate(lightBullet, transform.position, transform.rotation);
+                if (heavyBulletFound)
+                {
+                    Instantiate(heavyBullet, transform.position, transform.rotation);
+                }
+                else
+                {
+                    Instantiate(lightBullet, transform.position, transform.rotation);
+                }
             }
          
             
@@ -76,7 +86,14 @@ public class PlayerController : MonoBehaviour
             {
                 isShooting = true;
                 StartCoroutine(WaitToFire());
-                Instantiate(lightBullet, transform.position, transform.rotation * Quaternion.AngleAxis(180, transform.up));
+                if (heavyBulletFound)
+                {
+                    Instantiate(heavyBullet, transform.position, transform.rotation * Quaternion.AngleAxis(180, transform.up));
+                }
+                else
+                {
+                    Instantiate(lightBullet, transform.position, transform.rotation * Quaternion.AngleAxis(180, transform.up));
+                }
             }
         }
 
@@ -122,7 +139,13 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = other.gameObject.GetComponent<Portal>().teleportPoint.transform.position;
             startPos = transform.position;
+
         }//portal
+
+        if (other.gameObject.tag == "Ammo")
+        {
+            heavyBulletFound = true;
+        }
 
             //death
             if (other.gameObject.tag == "Death")
