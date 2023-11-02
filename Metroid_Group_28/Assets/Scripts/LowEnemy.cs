@@ -54,6 +54,12 @@ public class SideToSideEnemyScript : MonoBehaviour
 
     }//update
 
-  
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Bullet")
+        {
+            Destroy(gameObject);
+        }
+    }
 
 }//class

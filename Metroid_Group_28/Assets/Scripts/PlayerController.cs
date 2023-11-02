@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     private bool isShooting = false;
     private bool isHurt = false;
 
+    public MeshRenderer MeshRenderer;
+
 
     // Start is called before the first frame update
     void Start()
@@ -80,6 +82,8 @@ public class PlayerController : MonoBehaviour
 
     }//update
 
+    //corutines 
+
     IEnumerator WaitToFire()
     {
         yield return new WaitForSeconds(1);
@@ -88,8 +92,26 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator PlayerHurt()
     {
+        StartCoroutine(Blink());
         yield return new WaitForSeconds(5);
         isHurt = false;
+    }
+
+     public IEnumerator Blink()
+    {
+        for (int index = 0; index < 30; index++)
+        {
+            if (index % 2 == 0)
+            {
+                MeshRenderer.enabled = false;
+            }
+            else
+            {
+                MeshRenderer.enabled = true;
+            }
+            yield return new WaitForSeconds(0.1f);
+        }
+        MeshRenderer.enabled = true;
     }
 
     //Pickups and Collisons
