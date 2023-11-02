@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 1832110529800507877}
   - component: {fileID: 3620485085124716673}
   - component: {fileID: 5427359272287823414}
+  - component: {fileID: 4730607038955514392}
   m_Layer: 0
   m_Name: Portal ( Trigger)
-  m_TagString: Untagged
+  m_TagString: Portal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,6 +108,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4730607038955514392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404798864299855101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b932be5f11a15c40a654d80d446d651, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportPoint: {fileID: 0}
 --- !u!1 &3381459069118835027
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,7 +336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b932be5f11a15c40a654d80d446d651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teleportpoint: {fileID: 0}
+  teleportPoint: {fileID: 0}
 --- !u!1 &7652015973881043926
 GameObject:
   m_ObjectHideFlags: 0

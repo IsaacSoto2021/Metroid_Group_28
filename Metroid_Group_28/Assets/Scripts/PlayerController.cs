@@ -117,8 +117,8 @@ public class PlayerController : MonoBehaviour
     //Pickups and Collisons
     private void OnTriggerEnter(Collider other)
     {
-        //Portal
-            if (other.gameObject.tag == "Portal")
+        //This code is for the portals in game jumping to new levels in the scene
+        if (other.gameObject.tag == "Portal")
         {
             transform.position = other.gameObject.GetComponent<Portal>().teleportPoint.transform.position;
             startPos = transform.position;
