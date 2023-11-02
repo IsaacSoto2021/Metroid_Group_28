@@ -137,6 +137,7 @@ MonoBehaviour:
   Lives: 99
   lightBullet: {fileID: 1584707653591684885, guid: 38c77051e666c3d4fb56a9e6dee782a1, type: 3}
   heavyBullet: {fileID: 0}
+  MeshRenderer: {fileID: 3418113381692933782}
 --- !u!54 &6924882944101147703
 Rigidbody:
   m_ObjectHideFlags: 0
