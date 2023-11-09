@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rigidbodyRef;
     public Vector3 startPos;
-    public int Lives = 99;
+    public int lives = 99;
 
     public GameObject lightBullet;
     public GameObject heavyBullet;
@@ -142,6 +142,24 @@ public class PlayerController : MonoBehaviour
 
         }//portal
 
+        if (other.gameObject.tag == "Health")
+        {
+           lives += 35;
+           if (lives > 99)
+           {
+               lives = 99;
+           }
+
+        }//Health
+
+         if (other.gameObject.tag == "Health+")
+        {
+           
+               lives = 199;
+           
+
+        }//Health+
+
         if (other.gameObject.tag == "Ammo")
         {
             heavyBulletFound = true;
@@ -150,7 +168,7 @@ public class PlayerController : MonoBehaviour
             //death
             if (other.gameObject.tag == "Death")
             {
-             Lives += -15;
+             lives += -15;
              transform.position = startPos;
             }
 
@@ -160,7 +178,7 @@ public class PlayerController : MonoBehaviour
             //Enemy
             if (other.gameObject.tag == "Enemy")
             {
-                Lives += -5;
+                lives += -15;
                 isHurt = true;
                 StartCoroutine(PlayerHurt());
 
