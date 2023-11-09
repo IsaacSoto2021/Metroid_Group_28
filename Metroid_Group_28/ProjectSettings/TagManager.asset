@@ -11,6 +11,8 @@ TagManager:
   - Portal
   - Enemy
   - Bullet
+  - EnemyHard
+  - HeavyBullet
   layers:
   - Default
   - TransparentFX

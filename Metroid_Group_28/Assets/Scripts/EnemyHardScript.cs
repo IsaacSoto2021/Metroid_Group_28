@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// remstedt,reed
-// 10/31/2023
-// SideToSide basic Enemy Script movement script
+// Remstedt,Reed
+// 11/8/2023
+//  hard Enemy Script, movement script plus logic
 
-public class SideToSideEnemyScript : MonoBehaviour
+public class EnemyHardScript: MonoBehaviour
 {
     public float travelDistanceRight = 0;
     public float travelDistanceLeft = 0;
     public float speed = 1;
     private float startingX;
     private bool movingRight = true;
+    private int health = 10;
+  
+
 
     // Start is called before the first frame update
     void Start()
@@ -50,7 +53,11 @@ public class SideToSideEnemyScript : MonoBehaviour
                 movingRight = true;
             }
         }
-   
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
 
     }//update
 
@@ -58,7 +65,11 @@ public class SideToSideEnemyScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Bullet")
         {
-            Destroy(gameObject);
+            health += -1;
+        }
+         if (other.gameObject.tag == "HeavyBullet")
+        {
+            health += -3;
         }
     }
 

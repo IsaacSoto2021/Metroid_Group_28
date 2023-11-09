@@ -3,7 +3,7 @@ using UnityEngine;
 
 
 // Remstedt, Reed
-// 10/26/2023
+// 11/8/2023
 // player controller, handles movement, health, and Shooting
 public class PlayerController : MonoBehaviour
 {
@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     public GameObject heavyBullet;
 
     private bool isShooting = false;
-    private bool isHurt = false;
+    public bool isHurt = false;
 
     private bool heavyBulletFound = false;
 
@@ -109,14 +109,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator PlayerHurt()
     {
-        StartCoroutine(Blink());
-        yield return new WaitForSeconds(5);
-        isHurt = false;
-    }
-
-     public IEnumerator Blink()
-    {
-        for (int index = 0; index < 30; index++)
+       for (int index = 0; index < 50; index++)
         {
             if (index % 2 == 0)
             {
@@ -129,8 +122,11 @@ public class PlayerController : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
         MeshRenderer.enabled = true;
+       
+        isHurt = false;
     }
 
+ 
     //Pickups and Collisons
     private void OnTriggerEnter(Collider other)
     {
@@ -173,17 +169,32 @@ public class PlayerController : MonoBehaviour
             }
 
         //damagesources
-        if (isHurt == false)
-        {
+       
             //Enemy
             if (other.gameObject.tag == "Enemy")
             {
-                lives += -15;
-                isHurt = true;
-                StartCoroutine(PlayerHurt());
-
+                if (isHurt == false)
+                {
+                 isHurt = true;
+                 lives += -15;
+               
+                 StartCoroutine(PlayerHurt());
+                }
             }//enemy
-        }
+
+            if (other.gameObject.tag == "EnemyHard")
+            {
+                if (isHurt == false)
+                {
+                 isHurt = true;
+                 lives += -35;
+               
+                 StartCoroutine(PlayerHurt());
+                }
+            }//enemy
+
+
+        
     }
     private void Jump()
     {
