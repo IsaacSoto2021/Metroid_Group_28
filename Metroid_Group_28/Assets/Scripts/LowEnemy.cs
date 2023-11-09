@@ -60,6 +60,10 @@ public class SideToSideEnemyScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
+         if (other.gameObject.tag == "HeavyBullet")
+        {
+            Destroy(gameObject);
+        }
     }
 
 }//class

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Remstedt,Reed
-// 11/8/2023
+// 11/9/2023
 //  hard Enemy Script, movement script plus logic
 
 public class EnemyHardScript: MonoBehaviour
@@ -14,6 +14,10 @@ public class EnemyHardScript: MonoBehaviour
     private float startingX;
     private bool movingRight = true;
     private int health = 10;
+ 
+    public GameObject playerModel;
+    public Vector3 playerPos;
+  
   
 
 
@@ -22,23 +26,33 @@ public class EnemyHardScript: MonoBehaviour
     {
         // store initial x value at start
         startingX = transform.position.x;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (movingRight)
+        playerPos = playerModel.transform.position;
+
+        if (transform.position.x <= playerPos.x)
+        {
+            movingRight = true;
+        }
+        else
+        {
+            movingRight = false;
+        }
+
+
+      if (movingRight)
         {
             // only move right if movingRight is true AND x position is not past max distance
             if (transform.position.x <= startingX + travelDistanceRight)
             {
                 transform.position += Vector3.right * speed * Time.deltaTime;
             }
-            //once max distance right is reached set movingRight to false
-            else
-            {
-                movingRight = false;
-            }
+          
+           
         }
         else
         {
@@ -47,11 +61,8 @@ public class EnemyHardScript: MonoBehaviour
             {
                 transform.position += Vector3.left * speed * Time.deltaTime;
             }
-            //once max distance left is reached set movingRight to true
-            else
-            {
-                movingRight = true;
-            }
+            
+           
         }
 
         if (health <= 0)

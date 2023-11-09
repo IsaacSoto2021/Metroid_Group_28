@@ -205,3 +205,5 @@ MonoBehaviour:
   travelDistanceRight: 0
   travelDistanceLeft: 0
   speed: 1
+  playerModel: {fileID: 3223887379750483741, guid: 8392a3596b0fcc648b32ba1226142d74, type: 3}
+  PlayerPos: {x: 0, y: 0, z: 0}
