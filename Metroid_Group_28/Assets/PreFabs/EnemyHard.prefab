@@ -202,6 +202,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19b732fb5626a37498a706704274ca5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  travelDistanceRight: 10
-  travelDistanceLeft: -10
+  travelDistanceRight: 2.5
+  travelDistanceLeft: -2.5
   speed: 20
