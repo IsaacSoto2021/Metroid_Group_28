@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
     public float speed = 10f;
     public float jumpForce = 1f;
 
+    private bool jetpackFound = false;
+    private bool jetpackReady = true;
+
     private Rigidbody rigidbodyRef;
     public Vector3 startPos;
     public int lives = 99;
@@ -43,7 +46,7 @@ public class PlayerController : MonoBehaviour
         if (lives <= 0)
         {
            SceneManager.LoadScene(2);
-        }//cheack deathS
+        }//cheack death
 
         //movement controlls 
 
@@ -179,6 +182,13 @@ public class PlayerController : MonoBehaviour
 
         }//Health+
 
+        //jetpackFound
+        if (other.gameObject.tag == "Jetpack")
+        {
+            jetpackFound = true;
+        }
+
+        //Ammo
         if (other.gameObject.tag == "Ammo")
         {
             heavyBulletFound = true;
@@ -229,6 +239,18 @@ public class PlayerController : MonoBehaviour
         {
 
             rigidbodyRef.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        }
+        else
+        {
+            if (jetpackFound)
+            {
+                if (jetpackReady)
+                {
+                    rigidbodyRef.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+                    jetpackReady = false;
+                     StartCoroutine(JetpackReload());
+                }
+            }
         }
     }//jump
 
