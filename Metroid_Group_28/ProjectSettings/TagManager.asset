@@ -13,6 +13,7 @@ TagManager:
   - Bullet
   - EnemyHard
   - HeavyBullet
+  - PortalHome
   layers:
   - Default
   - TransparentFX
