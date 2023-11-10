@@ -138,6 +138,13 @@ public class PlayerController : MonoBehaviour
 
         }//portal
 
+        //End game portal
+        if (other.gameObject.tag == "PortalHome")
+        {
+
+          SceneManager.LoadScene(0);
+
+        }
         if (other.gameObject.tag == "Health")
         {
            lives += 35;
