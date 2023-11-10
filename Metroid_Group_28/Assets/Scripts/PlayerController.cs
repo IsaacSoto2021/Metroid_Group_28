@@ -110,6 +110,11 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator PlayerHurt()
     {
+        if (lives <= 0)
+        {
+            SceneManager.LoadScene(2);
+        }
+
        for (int index = 0; index < 50; index++)
         {
             if (index % 2 == 0)
@@ -169,12 +174,12 @@ public class PlayerController : MonoBehaviour
             heavyBulletFound = true;
         }
 
-            //death
+            //deathfloor reset
             if (other.gameObject.tag == "Death")
             {
              lives += -15;
              transform.position = startPos;
-              SceneManager.LoadScene(2);
+           //   
 
             }
 
