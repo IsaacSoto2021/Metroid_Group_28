@@ -120,6 +120,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator JetpackReload()
     {
         yield return new WaitForSeconds(4f);
+
         jetpackReady = true;
     }
 
