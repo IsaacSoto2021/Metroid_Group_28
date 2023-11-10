@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
         //check death
         if (lives <= 0)
         {
-            SceneManager.LoadScene(2);
+           SceneManager.LoadScene(2);
         }//cheack death
 
         //movement controlls 
