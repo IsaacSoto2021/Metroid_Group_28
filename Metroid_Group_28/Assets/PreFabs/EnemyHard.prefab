@@ -204,4 +204,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   travelDistanceRight: 2.5
   travelDistanceLeft: -2.5
-  speed: 20
+  speed: 12
