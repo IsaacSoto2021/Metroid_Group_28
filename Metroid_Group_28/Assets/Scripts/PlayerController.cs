@@ -39,6 +39,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //check death
+        if (lives <= 0)
+        {
+            SceneManager.LoadScene(2);
+        }//cheack death
+
         //movement controlls 
 
         //move Left
@@ -110,10 +116,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator PlayerHurt()
     {
-        if (lives <= 0)
-        {
-            SceneManager.LoadScene(2);
-        }
+        
 
        for (int index = 0; index < 50; index++)
         {
@@ -177,7 +180,7 @@ public class PlayerController : MonoBehaviour
             //deathfloor reset
             if (other.gameObject.tag == "Death")
             {
-             lives += -15;
+             lives += -20;
              transform.position = startPos;
            //   
 
