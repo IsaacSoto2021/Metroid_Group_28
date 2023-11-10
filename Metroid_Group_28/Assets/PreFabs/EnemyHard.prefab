@@ -202,8 +202,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19b732fb5626a37498a706704274ca5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  travelDistanceRight: 0
-  travelDistanceLeft: 0
-  speed: 1
-  playerModel: {fileID: 3223887379750483741, guid: 8392a3596b0fcc648b32ba1226142d74, type: 3}
-  PlayerPos: {x: 0, y: 0, z: 0}
+  travelDistanceRight: 10
+  travelDistanceLeft: -10
+  speed: 20
