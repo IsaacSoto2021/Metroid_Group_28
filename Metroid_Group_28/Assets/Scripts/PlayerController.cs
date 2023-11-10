@@ -174,6 +174,8 @@ public class PlayerController : MonoBehaviour
             {
              lives += -15;
              transform.position = startPos;
+              SceneManager.LoadScene(2);
+
             }
 
         //damagesources
