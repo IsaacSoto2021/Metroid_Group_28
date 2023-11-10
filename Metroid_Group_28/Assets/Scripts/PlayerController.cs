@@ -114,6 +114,13 @@ public class PlayerController : MonoBehaviour
         isShooting = false;
     }
 
+    IEnumerator JetpackReload()
+    {
+        yield return new WaitForSeconds(4f);
+
+        jetpackReady = true;
+    }
+
     IEnumerator PlayerHurt()
     {
         
