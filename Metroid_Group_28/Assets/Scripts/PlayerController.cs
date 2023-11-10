@@ -177,7 +177,7 @@ public class PlayerController : MonoBehaviour
             //deathfloor reset
             if (other.gameObject.tag == "Death")
             {
-             lives += -15;
+             lives += -20;
              transform.position = startPos;
            //   
 
